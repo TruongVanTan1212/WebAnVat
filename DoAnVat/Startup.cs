@@ -62,7 +62,7 @@ namespace DoAnVat
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Mathangs1}/{action=Index}/{id?}");
+                    pattern: "{controller=Mathangs}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
