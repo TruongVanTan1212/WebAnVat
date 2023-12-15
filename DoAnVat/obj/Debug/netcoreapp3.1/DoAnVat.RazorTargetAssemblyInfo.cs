@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyProductAttribute("DoAnVat")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f34167420653d1fabac0e463d6b7831f472ba24")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DoAnVat.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

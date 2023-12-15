@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = DoAnVat
-build_property.ProjectDir = D:\Nam4\DoAnQLDAPM\WebAnVat\DoAnVat\
+build_property.ProjectDir = D:\doan\WebAnVat\DoAnVat\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

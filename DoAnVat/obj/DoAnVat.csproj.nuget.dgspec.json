@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {}
+    "D:\\doan\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {}
   },
   "projects": {
-    "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {
+    "D:\\doan\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
+        "projectUniqueName": "D:\\doan\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
         "projectName": "DoAnVat",
-        "projectPath": "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
-        "packagesPath": "C:\\Users\\khanh\\.nuget\\packages\\",
-        "outputPath": "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\obj\\",
+        "projectPath": "D:\\doan\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\doan\\WebAnVat\\DoAnVat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\khanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
