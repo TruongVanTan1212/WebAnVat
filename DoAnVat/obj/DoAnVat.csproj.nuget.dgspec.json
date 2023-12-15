@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\4 Năm Học Nè\\DoAn_AnVat\\DoAnVat\\DoAnVat\\DoAnVat.csproj": {}
+    "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {}
   },
   "projects": {
-    "D:\\4 Năm Học Nè\\DoAn_AnVat\\DoAnVat\\DoAnVat\\DoAnVat.csproj": {
+    "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\4 Năm Học Nè\\DoAn_AnVat\\DoAnVat\\DoAnVat\\DoAnVat.csproj",
+        "projectUniqueName": "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
         "projectName": "DoAnVat",
-        "projectPath": "D:\\4 Năm Học Nè\\DoAn_AnVat\\DoAnVat\\DoAnVat\\DoAnVat.csproj",
-        "packagesPath": "C:\\Users\\Truong Van Tan\\.nuget\\packages\\",
-        "outputPath": "D:\\4 Năm Học Nè\\DoAn_AnVat\\DoAnVat\\DoAnVat\\obj\\",
+        "projectPath": "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
+        "packagesPath": "C:\\Users\\khanh\\.nuget\\packages\\",
+        "outputPath": "D:\\Nam4\\DoAnQLDAPM\\WebAnVat\\DoAnVat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Truong Van Tan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\khanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,6 +60,10 @@
               "target": "Package",
               "version": "[3.1.32, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -85,7 +89,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -97,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
