@@ -1241,3 +1241,7 @@ D:\4 Năm Học Nè\DoAn_AnVat\WebAnVat\DoAnVat\obj\Debug\netcoreapp3.1\DoAnVat.
 D:\4 Năm Học Nè\DoAn_AnVat\WebAnVat\DoAnVat\obj\Debug\netcoreapp3.1\DoAnVat.dll
 D:\4 Năm Học Nè\DoAn_AnVat\WebAnVat\DoAnVat\obj\Debug\netcoreapp3.1\DoAnVat.pdb
 D:\4 Năm Học Nè\DoAn_AnVat\WebAnVat\DoAnVat\obj\Debug\netcoreapp3.1\DoAnVat.genruntimeconfig.cache
+D:\4 Năm Học Nè\DoAn_AnVat\WebAnVat\DoAnVat\obj\Debug\netcoreapp3.1\Razor\Views\Mathangs\Login.cshtml.g.cs
+D:\4 Năm Học Nè\DoAn_AnVat\WebAnVat\DoAnVat\obj\Debug\netcoreapp3.1\Razor\Views\Mathangs\Register.cshtml.g.cs
+D:\4 Năm Học Nè\DoAn_AnVat\WebAnVat\DoAnVat\obj\Debug\netcoreapp3.1\Razor\Views\Mathangs\Customer.cshtml.g.cs
+D:\4 Năm Học Nè\DoAn_AnVat\WebAnVat\DoAnVat\obj\Debug\netcoreapp3.1\Razor\Views\Mathangs\CreateBill.cshtml.g.cs

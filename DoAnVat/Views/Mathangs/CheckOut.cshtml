@@ -1,35 +1,67 @@
 ﻿
 @model List<DoAnVat.Models.CartItem>
+@{ 
+    ViewData["Title"] = "Thanh toán";
+}
 <h3> Vui lòng kiểm tra thông tin trước khi thanh toán </h3>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col">
 
         <h3>Thông tin khách hàng</h3>
-        <form asp-action="CreateBill">
-            <div class="my-3">
-                <label>Họ Tên </label>
-                <input type="text" name="hoten" class="form-control" />
-            </div>
+        @if (ViewBag.khachhang != null)
+        {
+    <form asp-action="CreateBill">
+        <input type="hidden" name="id" value="@ViewBag.khachhang.MaKh" />
+        <div class="mb-3">
+            <label>Họ Tên </label>
+            <input name="hoten" class="form-control"  type="text" value="@ViewBag.khachhang.Ten" disabled />
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input name="email" class="form-control" type="text" value="@ViewBag.khachhang.Email" disabled />
+        </div>
+        <div class="mb-3">
+            <label>Số Điện Thoại</label>
+            <input name="dienthoai" class="form-control"  type="text" value="@ViewBag.khachhang.DienThoai" disabled />
+        </div>
+        <div class="mb-3">
+            <label>Địa chỉ </label>
+            <textarea name="diachi" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
 
-            <div class="my-3">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control" />
-            </div>
-            <div class="my-3">
-                <label>Số Điện Thoại</label>
-                <input type="text" name="dienthoai" class="form-control" />
-            </div>
-            <div class="my-3">
-                <label>Địa chỉ </label>
-                <input type="text" name="diachi" class="form-control" />
-            </div>
-            <div class="my-3">
+            <input type="submit" value="Xác nhận đơn hàng" class="btn btn-danger" />
+        </div>
 
-                <input type="submit" value="Xác nhận đơn hàng" class="btn btn-danger" />
-            </div>
+    </form>
+        }
+        else
+        {
+            <form asp-action="CreateBill">
+                <div class="mb-3">
+                    <label>Họ Tên </label>
+                    <input type="text" name="hoten" class="form-control" />
+                </div>
 
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input type="text" name="email" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label>Số Điện Thoại</label>
+                    <input type="text" name="dienthoai" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label>Địa chỉ </label>
+                    <textarea name="diachi" class="form-control"></textarea>
+                </div>
+                <div class="mb-3">
 
-        </form>
+                    <input type="submit" value="Xác nhận đơn hàng" class="btn btn-danger" />
+                </div>
+            </form>
+        }
+
     </div>
     <div class="col-md-6">
         <h3 class="text-info">Giỏ hàng của bạn</h3>
@@ -72,12 +104,8 @@
                     <td colspan="2"><strong class="text-danger">@(tongtien.ToString("n0")) d</strong></td>
                 </tr>
             </table>
-
         }
 
-
     </div>
-
-
 </div>
 

@@ -1,4 +1,5 @@
 ﻿using DoAnVat.Data;
+using DoAnVat.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +36,7 @@ namespace DoAnVat
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
+            services.AddSingleton<IPasswordHasher<Khachhang>, PasswordHasher<Khachhang>>();
             services.AddSession(Options =>
             {
                 Options.Cookie.Name = "Ăn Vật Shop";
@@ -49,6 +51,7 @@ namespace DoAnVat
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+
             }
             else
             {
