@@ -24,10 +24,11 @@ namespace DoAnVat.Controllers
 
         void GetInfo()
         {
+            // số lượng mặt hàng có trong giỏ   
             ViewData["solg"] = GetCartItems().Count();
-
+            // danh sách danh mục có trong db
             ViewBag.danhmuc = _context.Danhmuc.ToList();
-
+                
 
         }
         // GET: Mahangs
@@ -37,9 +38,15 @@ namespace DoAnVat.Controllers
             var applicationDbContext = _context.Mathang.Include(m => m.MaDmNavigation);
             return View(await applicationDbContext.ToListAsync());
         }
-
+        // lấy sản phẩm theo danh mục
+        public async Task<IActionResult> Index1(int id)
+        {
+            GetInfo();
+            var applicationDbContext = _context.Mathang.Where(s => s.MaDm ==id ).Include(m => m.MaDmNavigation);
+            return View(await applicationDbContext.ToListAsync());
+        }
         // GET: Mahangs/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id)   
         {
             if (id == null)
             {
@@ -142,8 +149,11 @@ namespace DoAnVat.Controllers
             return View(GetCartItems());
         }
         [HttpPost, ActionName("CreateBill")]
+
+        // lưu thông tin đơn hàng
         public async Task<IActionResult> CreateBill(string email, string hoten, string dienthoai, string diachi)
         {
+            //
             var kh = new Khachhang();
             kh.Ten = hoten;
             kh.Email = email;

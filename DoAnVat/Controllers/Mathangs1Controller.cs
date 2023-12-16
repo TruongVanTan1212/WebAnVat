@@ -1,4 +1,4 @@
-﻿using System;
+﻿        using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -94,7 +94,7 @@ namespace DoAnVat.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MaMh,Ten,GiaGoc,GiaBan,SoLuong,MoTa,HinhAnh,MaDm,LuotXem,LuotMua")] Mathang mathang )
+        public async Task<IActionResult> Edit(int id, [Bind("MaMh,Ten,GiaGoc,GiaBan,SoLuong,MoTa,HinhAnh,MaDm,LuotXem,LuotMua")] Mathang mathang, IFormFile file)
         {
             if (id != mathang.MaMh)
             {
@@ -105,6 +105,7 @@ namespace DoAnVat.Controllers
             {
                 try
                 {
+                    mathang.HinhAnh = Upload(file);
                     _context.Update(mathang);
                     await _context.SaveChangesAsync();
                 }
@@ -167,7 +168,7 @@ namespace DoAnVat.Controllers
             {
 
                 uploadFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
-                var path = $"wwwroot\\images\\{uploadFileName}";
+                var path = $"wwwroot\\img\\{uploadFileName}";
                 using (var stream = new FileStream(path, FileMode.Create))
                 {
                     file.CopyTo(stream);

@@ -29,12 +29,11 @@
                                 { 
                             <li>  <a class="dropdown-item" asp-action="Index1" asp-route-id="@i.MaDm">@i.Ten </a></li>
                             }                            
-                            
                         </ul>
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a asp-action="Login" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
+                    <a asp-controller="Mathangs1" asp-action="Create" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
                     <a asp-action="ViewCart" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Giỏ hàng <span class="badge bg-danger text-white ms-1 rounded-pill">@ViewData["solg"]</span></a>
                 </div>
             </div>
@@ -102,7 +101,6 @@
                         
                             <a class="list-group-item" asp-action="Index1" asp-route-id="@i.MaDm">@i.Ten </a >
                             }
-                            
                     </div>
                 <div class="col-3 text-muted">
                     <h4>DỊCH VỤ KHÁCH HÀNG</h4>
