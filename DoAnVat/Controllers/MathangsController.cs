@@ -9,16 +9,20 @@ using DoAnVat.Data;
 using DoAnVat.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace DoAnVat.Controllers
 {
     public class MathangsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IPasswordHasher<Khachhang> _pwHear;   
 
-        public MathangsController(ApplicationDbContext context)
+        public MathangsController(ApplicationDbContext context, IPasswordHasher<Khachhang> passwordHasher)
         {
             _context = context;
+            _pwHear = passwordHasher;
         }
 
 
@@ -28,7 +32,11 @@ namespace DoAnVat.Controllers
             ViewData["solg"] = GetCartItems().Count();
             // danh sách danh mục có trong db
             ViewBag.danhmuc = _context.Danhmuc.ToList();
-                
+            // lấy thông tin người dùng
+            if(HttpContext.Session.GetString("khachhang") != "")
+            {
+                ViewBag.khachhang = _context.Khachhang.FirstOrDefault(k => k.Email == HttpContext.Session.GetString("khachhang"));
+            }
 
         }
         // GET: Mahangs
@@ -151,17 +159,24 @@ namespace DoAnVat.Controllers
         [HttpPost, ActionName("CreateBill")]
 
         // lưu thông tin đơn hàng
-        public async Task<IActionResult> CreateBill(string email, string hoten, string dienthoai, string diachi)
+        public async Task<IActionResult> CreateBill(int id, string email, string hoten, string dienthoai, string diachi)
         {
-            //
-            var kh = new Khachhang();
-            kh.Ten = hoten;
-            kh.Email = email;
-          
-            kh.DienThoai = dienthoai;
-            _context.Add(kh);
-            await _context.SaveChangesAsync();
 
+            // xử lý thông tin khách hàng trường hợp khách hàng mới
+            var kh = new Khachhang();
+            if(id != 0) // khách hàng đã đăng nhập
+            {
+                kh.MaKh = id;
+            }
+            else
+            {
+                kh.Ten = hoten;
+                kh.Email = email;
+                kh.DienThoai = dienthoai;
+                _context.Add(kh);
+                await _context.SaveChangesAsync();
+            }
+            
             var hd = new Hoadon();
             hd.Ngay = DateTime.Now;
             hd.MaKh = kh.MaKh;
@@ -200,7 +215,66 @@ namespace DoAnVat.Controllers
             return View(hd);
         }
 
+        // get 
+        public IActionResult Login()
+        {
+            GetInfo();
+            return View();
+        }
 
+        [HttpPost]
+        public IActionResult Login(string email,string matkhau)
+        {
+            var kh = _context.Khachhang.FirstOrDefault(k => k.Email == email);
+           if(kh != null && _pwHear.VerifyHashedPassword(kh, kh.MatKhau, matkhau) == PasswordVerificationResult.Success)
+            {
+                HttpContext.Session.SetString("khachhang", kh.Email);
+                return RedirectToAction(nameof(Customer));
+            }
+            return RedirectToAction(nameof(Login));
+
+        }
+
+        public IActionResult Customer()
+        {
+            GetInfo();
+            return View();
+        }
+
+        public IActionResult Register()
+        {
+
+            GetInfo();
+            return View();
+
+        }
+
+
+        [HttpPost]
+        public IActionResult Register(string email,string matkhau,string hoten, string dienthoai)
+        {
+            // kiểm tra email đã tồn tại 
+
+
+            // thêm khach hàng vào db
+            var kh = new Khachhang();
+            kh.Email = email;
+            kh.MatKhau = _pwHear.HashPassword(kh, matkhau);   // mã hóa mật khẩu
+            kh.Ten = hoten;
+            kh.DienThoai = dienthoai;
+            _context.Add(kh);
+            _context.SaveChanges();
+
+
+            return RedirectToAction(nameof(Login));
+        }
+
+        public IActionResult Signout()
+        {
+            HttpContext.Session.SetString("khachhang", "");
+            GetInfo();
+            return RedirectToAction(nameof(Index));
+        }
 
     }
 }

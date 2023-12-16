@@ -20,17 +20,24 @@ namespace DoAnVat.Models
         [Key]
         [Column("MaMH")]
         public int MaMh { get; set; }
-        [Required]
+        [Required(ErrorMessage = "vui lòng nhập tên sản phẩm")]
         [StringLength(100)]
+        [Display(Name = "Tên Sản Phẩm")]
         public string Ten { get; set; }
+        [Display(Name = "Giá Gốc")]
         public int GiaGoc { get; set; }
+        [Display(Name = "Giá Bán")]
         public int GiaBan { get; set; }
+        [Display(Name = "Số Lượng")]
         public short? SoLuong { get; set; }
         [StringLength(1000)]
+        [Display(Name = "Mô Tả")]
         public string MoTa { get; set; }
         [StringLength(255)]
+        [Display(Name = "Hình Ảnh")]
         public string HinhAnh { get; set; }
         [Column("MaDM")]
+        [Display(Name = "Danh Mục")]
         public int MaDm { get; set; }
         public int? LuotXem { get; set; }
         public int? LuotMua { get; set; }

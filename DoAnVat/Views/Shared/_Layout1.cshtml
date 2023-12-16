@@ -33,8 +33,17 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a asp-controller="Mathangs1" asp-action="Create" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
+                    @if (ViewBag.khachhang != null)
+                    {
+                        <a asp-action="Customer" class="btn btn-outline-light"><i class="bi bi-person"></i> @ViewBag.khachhang.Ten</a>
+                    }
+                    else
+                    {
+                    <a asp-action="Login" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>
+                    }
+                    &nbsp;
                     <a asp-action="ViewCart" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Giỏ hàng <span class="badge bg-danger text-white ms-1 rounded-pill">@ViewData["solg"]</span></a>
+                    
                 </div>
             </div>
         </div>
