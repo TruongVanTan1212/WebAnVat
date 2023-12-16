@@ -1,0 +1,83 @@
+﻿
+@model List<DoAnVat.Models.CartItem>
+<h3> Vui lòng kiểm tra tghoong tin trước khi thanh toán </h3>
+<div class="row">
+    <div class="col-md-6">
+
+        <h3>Thông tin khách hàng</h3>
+        <form asp-action="CreateBill">
+            <div class="my-3">
+                <label>Họ Tên </label>
+                <input type="text" name="hoten" class="form-control" />
+            </div>
+
+            <div class="my-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" />
+            </div>
+            <div class="my-3">
+                <label>Số Điện Thoại</label>
+                <input type="text" name="dienthoai" class="form-control" />
+            </div>
+            <div class="my-3">
+                <label>Địa chỉ </label>
+                <input type="text" name="diachi" class="form-control" />
+            </div>
+            <div class="my-3">
+
+                <input type="submit" value="Xác nhận đơn hàng" class="btn btn-danger" />
+            </div>
+
+
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h3 class="text-info">Giỏ hàng của bạn</h3>
+        @if (Model.Count > 0)
+        {
+            int stt = 1;
+            int thanhtien = 0;
+            int tongtien = 0;
+            <table class="table">
+                <tr>
+                    <th>STT</th>
+
+                    <th>Sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th></th>
+                </tr>
+                @foreach (var i in Model)
+                {
+                    thanhtien = i.Mathang.GiaBan * i.Soluong;
+                    tongtien += thanhtien;
+                    <tr class="align-middle">
+                        <td>@(stt++)</td>
+                        <td>
+                            <img src="~/images/products/@(i.Mathang.HinhAnh)" class="img-thumbnail" width="50" />
+                            @(i.Mathang.Ten)
+                        </td>
+                        <td>@(i.Mathang.GiaBan.ToString("n0")) d</td>
+                        <td>
+                            @(i.Soluong)
+                        </td>
+                        <td>@(thanhtien.ToString("n0")) </td>
+
+                    </tr>
+                }
+
+                <tr>
+                    <td colspan="4" class="text-end fw-bold">Thành tiền</td>
+                    <td colspan="2"><strong class="text-danger">@(tongtien.ToString("n0")) d</strong></td>
+                </tr>
+            </table>
+
+        }
+
+
+    </div>
+
+
+</div>
+

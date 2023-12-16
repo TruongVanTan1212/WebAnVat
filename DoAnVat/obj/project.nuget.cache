@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D+69ADzJcovdLxKSh6RXzY6GmI0SK/R2nDwYv+ogH2slJ96gfHZeXISFahNngAR3Arcjn6dP4UsN3CXJ5PmOlA==",
+  "dgSpecHash": "L0OfInVJLIlcl+5R/+la3x8QA72EZ9Re/fRyp9T9Ur9how/0XoKCja66L66loew5FDx0h/TkLxpdG3WgUJn7TA==",
   "success": true,
-  "projectFilePath": "D:\\doan\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
+  "projectFilePath": "D:\\Tài liệu năm 4\\CN Web\\doanvat\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.32\\microsoft.aspnetcore.cryptography.internal.3.1.32.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.32\\microsoft.aspnetcore.cryptography.keyderivation.3.1.32.nupkg.sha512",

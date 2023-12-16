@@ -8,15 +8,17 @@
 <br />
 <br />
 <div class="row">
+
     <div class="col-md-4">
         <img src="~/img/@Html.DisplayFor(model => model.HinhAnh)" width="300" />
     </div>
     <div class="col-md-8">
         <h3 class="fw-bolder text-info">@Html.DisplayFor(model => model.Ten)</h3>
         <br />
-        <p> số lượng: @Html.DisplayFor(model => model.SoLuong)</p> 
-        <div class="card-footer  border-top-0 bg-transparent ">
-            <div class="text-center"><a class="btn btn-outline-info mt-auto" href="#">Chọn mua</a></div>
+        <p> số lượng: @Html.DisplayFor(model => model.SoLuong)</p>
+
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-outline-info mt-auto" asp-action="ViewCart"  asp-route-id="MaMh">Chọn mua</a></div>
         </div>
         <p>Mô tả</p>
         <p>@Html.DisplayFor(model => model.MoTa)</p>

@@ -23,8 +23,8 @@ namespace DoAnVat.Models
         [Required]
         [StringLength(100)]
         public string Ten { get; set; }
-        public int? GiaGoc { get; set; }
-        public int? GiaBan { get; set; }
+        public int GiaGoc { get; set; }
+        public int GiaBan { get; set; }
         public short? SoLuong { get; set; }
         [StringLength(1000)]
         public string MoTa { get; set; }
