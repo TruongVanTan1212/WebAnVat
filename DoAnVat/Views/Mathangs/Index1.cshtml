@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<DoAnVat.Models.Mathang>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Thông tin sản phẩm theo danh mục";
 }
 
-<h3 class="text-info">Tất cả sản phẩm</h3>
+<h3 class="text-info">Tất cả sản phẩm theo danh mục </h3>
 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     @foreach (var item in Model)
     {
@@ -41,5 +41,3 @@
             </div>
         </div>
     }
-    }
-
