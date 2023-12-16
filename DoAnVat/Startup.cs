@@ -1,4 +1,4 @@
-using DoAnVat.Data;
+﻿using DoAnVat.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +34,12 @@ namespace DoAnVat
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession(Options =>
+            {
+                Options.Cookie.Name = "Ăn Vật Shop";
+                Options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +63,9 @@ namespace DoAnVat
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseStaticFiles();
+            app.UseSession();
+            app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

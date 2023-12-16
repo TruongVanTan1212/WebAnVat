@@ -25,16 +25,17 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Danh mục sản phẩm</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">Sản phẩm</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="#!">Danh mục 1</a></li>
-                            <li><a class="dropdown-item" href="#!">Danh mục 2</a></li>
+                            @foreach (var i in (List<Danhmuc>)ViewBag.danhmuc)
+                                { 
+                            <li>  <a class="dropdown-item" asp-action="Index1" asp-route-id="@i.MaDm">@i.Ten </a></li>
+                            }                            
+                            
                         </ul>
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a href="#" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
-                    <a href="#" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Giỏ hàng <span class="badge bg-danger text-white ms-1 rounded-pill">0</span></a>
+                    <a asp-action="Login" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
+                    <a asp-action="ViewCart" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Giỏ hàng <span class="badge bg-danger text-white ms-1 rounded-pill">@ViewData["solg"]</span></a>
                 </div>
             </div>
         </div>
@@ -96,10 +97,13 @@
                 </div>
                 <div class="col-3 text-muted">
                     <h4>DANH MỤC HÀNG</h4>
-                    <a href="#" class="list-group-item">Liên kết</a>
-                    <a href="#" class="list-group-item">Liên kết</a>
-                    <a href="#" class="list-group-item">Liên kết</a>
-                </div>
+                    @foreach (var i in (List<Danhmuc>)ViewBag.danhmuc)
+                    {
+                        
+                            <a class="list-group-item" asp-action="Index1" asp-route-id="@i.MaDm">@i.Ten </a >
+                            }
+                            
+                    </div>
                 <div class="col-3 text-muted">
                     <h4>DỊCH VỤ KHÁCH HÀNG</h4>
                     <a href="#" class="list-group-item">Hướng dẫn mua hàng</a>
