@@ -37,6 +37,10 @@ namespace DoAnVat.Controllers
             {
                 ViewBag.khachhang = _context.Khachhang.FirstOrDefault(k => k.Email == HttpContext.Session.GetString("khachhang"));
             }
+            if (HttpContext.Session.GetString("Nhanvien") != "")
+            {
+                ViewBag.Nhanvien = _context.Nhanvien.FirstOrDefault(k => k.Email == HttpContext.Session.GetString("Nhanvien"));
+            }
 
         }
         // GET: Mahangs
@@ -225,11 +229,21 @@ namespace DoAnVat.Controllers
         [HttpPost]
         public IActionResult Login(string email,string matkhau)
         {
+            var nv1 = _context.Nhanvien.FirstOrDefault(k => k.Email == email);
+            var nv2 = _context.Nhanvien.FirstOrDefault(k => k.MatKhau == matkhau);
             var kh = _context.Khachhang.FirstOrDefault(k => k.Email == email);
            if(kh != null && _pwHear.VerifyHashedPassword(kh, kh.MatKhau, matkhau) == PasswordVerificationResult.Success)
             {
                 HttpContext.Session.SetString("khachhang", kh.Email);
                 return RedirectToAction(nameof(Customer));
+            }
+            else
+            {
+                if (nv1 != null && nv2 != null)
+                {
+                    HttpContext.Session.SetString("Nhanvien", nv1.Email);
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return RedirectToAction(nameof(Login));
 
@@ -272,6 +286,7 @@ namespace DoAnVat.Controllers
         public IActionResult Signout()
         {
             HttpContext.Session.SetString("khachhang", "");
+            HttpContext.Session.SetString("Nhanvien", "");
             GetInfo();
             return RedirectToAction(nameof(Index));
         }

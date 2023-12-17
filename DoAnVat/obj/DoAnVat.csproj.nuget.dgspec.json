@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\4 Năm Học Nè\\DoAn_AnVat\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {}
+    "D:\\QLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {}
   },
   "projects": {
-    "D:\\4 Năm Học Nè\\DoAn_AnVat\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {
+    "D:\\QLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\4 Năm Học Nè\\DoAn_AnVat\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
+        "projectUniqueName": "D:\\QLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
         "projectName": "DoAnVat",
-        "projectPath": "D:\\4 Năm Học Nè\\DoAn_AnVat\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
-        "packagesPath": "C:\\Users\\Truong Van Tan\\.nuget\\packages\\",
-        "outputPath": "D:\\4 Năm Học Nè\\DoAn_AnVat\\WebAnVat\\DoAnVat\\obj\\",
+        "projectPath": "D:\\QLDAPM\\WebAnVat\\DoAnVat\\DoAnVat.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\QLDAPM\\WebAnVat\\DoAnVat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Truong Van Tan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
         }
       }
     }
