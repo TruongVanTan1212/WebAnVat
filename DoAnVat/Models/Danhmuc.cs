@@ -20,8 +20,9 @@ namespace DoAnVat.Models
         [Key]
         [Column("MaDM")]
         public int MaDm { get; set; }
-        [Required]
+        [Required(ErrorMessage = "vui lòng nhập tên danh mục")]
         [StringLength(100)]
+        [Display(Name = "Tên danh mục")]
         public string Ten { get; set; }
 
         [InverseProperty("MaDmNavigation")]

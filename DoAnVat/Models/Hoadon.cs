@@ -20,8 +20,10 @@ namespace DoAnVat.Models
         [Key]
         [Column("MaHD")]
         public int MaHd { get; set; }
+        [Display(Name = "thời gian đặt hàng")]
         [Column(TypeName = "datetime")]
         public DateTime? Ngay { get; set; }
+        [Display(Name = "Tổng tiền")]
         public int? TongTien { get; set; }
         [Column("MaKH")]
         public int MaKh { get; set; }
@@ -29,6 +31,7 @@ namespace DoAnVat.Models
 
         [ForeignKey(nameof(MaKh))]
         [InverseProperty(nameof(Khachhang.Hoadon))]
+        [Display(Name = "Tên khách hàng")]
         public virtual Khachhang MaKhNavigation { get; set; }
         [InverseProperty("MaHdNavigation")]
         public virtual ICollection<Cthoadon> Cthoadon { get; set; }

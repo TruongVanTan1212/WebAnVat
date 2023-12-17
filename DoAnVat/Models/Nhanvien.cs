@@ -15,16 +15,21 @@ namespace DoAnVat.Models
         [Key]
         [Column("MaNV")]
         public int MaNv { get; set; }
-        [Required]
+        [Required(ErrorMessage = "vui lòng nhập nhân viên")]
         [StringLength(100)]
+        [Display(Name = "Tên nhân viên")]
         public string Ten { get; set; }
         [Column("MaCV")]
+        [Display(Name = "Tên chức vụ")]
         public int MaCv { get; set; }
         [StringLength(20)]
+        [Display(Name = "Số điện thoại")]
         public string DienThoai { get; set; }
         [StringLength(50)]
+        [Display(Name = "gmail")]
         public string Email { get; set; }
         [StringLength(50)]
+        [Display(Name = "Mật Khẩu")]
         public string MatKhau { get; set; }
 
         [ForeignKey(nameof(MaCv))]

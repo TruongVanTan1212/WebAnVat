@@ -19,8 +19,10 @@ namespace DoAnVat.Models
 
         [Key]
         [Column("MaCV")]
+
         public int MaCv { get; set; }
-        [Required]
+        [Required(ErrorMessage = "vui lòng nhập tên chức vụ")]
+        [Display(Name = "Tên Chức vụ")]
         [StringLength(100)]
         public string Ten { get; set; }
         public double? HeSo { get; set; }

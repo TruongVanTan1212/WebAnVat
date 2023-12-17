@@ -39,11 +39,18 @@
                     }
                     else
                     {
-                    <a asp-action="Login" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>
-                    }
+                        @if (ViewBag.Nhanvien != null)
+                        {
+                           <a asp-controller="Home" asp-action="Index" class="btn btn-outline-light"><i class="bi bi-person"></i> @ViewBag.nhanvien.Ten</a> 
+                           }
+                                else
+                                {
+                                   <a asp-action="Login" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>
+                                }
+                    }                  
                     &nbsp;
                     <a asp-action="ViewCart" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Giỏ hàng <span class="badge bg-danger text-white ms-1 rounded-pill">@ViewData["solg"]</span></a>
-                    
+
                 </div>
             </div>
         </div>
